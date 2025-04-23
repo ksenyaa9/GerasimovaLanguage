@@ -189,6 +189,7 @@
       <DependentUpon>GerasimovaModel.edmx</DependentUpon>
       <LastGenOutput>GerasimovaModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="image\picture.png" />
     <Resource Include="Клиенты\1.jpg" />
     <Resource Include="Клиенты\10.jpg" />
     <Resource Include="Клиенты\11.jpg" />

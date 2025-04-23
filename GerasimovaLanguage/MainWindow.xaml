@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <Image Source="image/school_logo.png" HorizontalAlignment="Left"></Image>
         <TextBlock Text="Лангуаге" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
-        
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"></Frame>
+        <Button Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"></Button>
         
     </Grid>
 </Window>

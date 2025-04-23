@@ -9,6 +9,92 @@
       Title="AddEditPage"  FontFamily="Comic Sans MS">
 
     <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" 
+            Name="IdPanel">
+            <TextBlock Text="ID" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"/>
+            <TextBox Text="{Binding ID}" IsEnabled="False" FontSize="15" Height="25" Width="248"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Фамилия" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"></TextBlock>
+            <TextBox Text="{Binding LastName}" FontSize="15" Height="25" Width="248"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Имя" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"></TextBlock>
+            <TextBox Text="{Binding FirstName}" FontSize="15" Height="25" Width="248"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Отчество" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"></TextBlock>
+            <TextBox Text="{Binding Patronymic}" FontSize="15" Height="25" Width="248"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal">
+            <TextBlock Text="Email" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"></TextBlock>
+            <TextBox  Text="{Binding Email}" FontSize="15" Height="25" Width="248"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="5" Orientation="Horizontal">
+            <TextBlock Text="Телефон" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"></TextBlock>
+            <TextBox Text="{Binding Phone}" FontSize="15" Height="25" Width="248"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="6" Orientation="Horizontal">
+            <TextBlock Text="Дата рождения" FontSize="15" Height="20" MinWidth="120" Width="auto" Margin="5"/>
+            <DatePicker SelectedDate="{Binding Birthday}" FontSize="15" Height="30" Width="248"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="7" Orientation="Horizontal">
+            <TextBlock Text="Пол" FontSize="15" Height="36" MinWidth="120" Width="auto" Margin="5"></TextBlock>
+            <StackPanel Orientation="Vertical">
+                <RadioButton Content="женский" GroupName="Sort" Width="200" FontSize="17" Name="RBtnF" Checked="RBtnF_Checked"></RadioButton>
+                <RadioButton Content="мужской" GroupName="Sort" Width="200" FontSize="17" Name="RBtnM" Checked="RBtnM_Checked"></RadioButton>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical" Grid.RowSpan="5">
+            <TextBlock Text="Фото" FontSize="15" Height="20" Width="auto" HorizontalAlignment="Center" Margin="5"></TextBlock>
+            <Image Name="PhotoPathImage" MinHeight="50" Height="200" Width="200" HorizontalAlignment="Center" Margin="10">
+                <Image.Source>
+                    <Binding Path="PhotoPath">
+                        <Binding.TargetNullValue>
+                            <ImageSource>
+                                image/picture.png
+                            </ImageSource>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>
+
+            </Image>
+            
+            <Button Content="Изменить фото" Name="ChangePictureBtn" HorizontalAlignment="Center" Click="ChangePictureBtn_Click" FontSize="17"></Button>
+        </StackPanel>
+
+
         
+
+        <StackPanel Grid.Column="1" Grid.Row="8" Orientation="Horizontal">
+            <Button Content="сохранить" Name="SaveBtn" Margin="5" Click="SaveBtn_Click"></Button>
+           
+        </StackPanel>
+
+
     </Grid>
 </Page>
